@@ -6,9 +6,9 @@
 [Service]
   Restart=on-failure
   RestartSec=5s
-  WorkingDirectory=/data/mainnet/blockscout
+  WorkingDirectory=/data/blockscout
   ExecStartPre=
-  ExecStart=bash ./start.sh 
+  ExecStart=/usr/bin/bash ./mainnet_start.sh
   Type=simple
   User=centos
   KillSignal=SIGINT
