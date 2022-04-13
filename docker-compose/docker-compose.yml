@@ -9,25 +9,8 @@ services:
         POSTGRES_PASSWORD: ''
         POSTGRES_USER: 'postgres'
         POSTGRES_HOST_AUTH_METHOD: 'trust'
+    volumes:
+      - /data/docker-postgres/postgres-data:/var/lib/postgresql/data
     ports:
       - 7432:5432
-
-  blockscout:
-    depends_on:
-      - db
-    image: blockscout/blockscout:${DOCKER_TAG:-latest}
-    build:
-      context: ..
-      dockerfile: ./docker/Dockerfile
-    restart: always
-    container_name: 'blockscout'
-    links:
-      - db:database
-    command: 'mix do ecto.create, ecto.migrate, phx.server'
-    extra_hosts:
-      - 'host.docker.internal:host-gateway'
-    env_file:
-      -  ./envs/common-blockscout.env
-    ports:
-      - 4000:4000
 
