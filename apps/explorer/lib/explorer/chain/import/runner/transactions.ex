@@ -81,16 +81,16 @@ defmodule Explorer.Chain.Import.Runner.Transactions do
 
     # Enforce Transaction ShareLocks order (see docs: sharelocks.md)
     ordered_changes_list = Enum.sort_by(changes_list, & &1.hash)
-    Logger.info("Deleting org address: #{inspect(ordered_changes_list.length)}")
-    new_ordered_changes_list =
-      ordered_changes_list
-      |> Enum.reject(&(&1.hash == '0x0000000000000000000000000000000000000000'))
+    #Logger.info("Deleting org address: #{inspect(ordered_changes_list.length)}")
+    #new_ordered_changes_list =
+    #  ordered_changes_list
+    #  |> Enum.reject(&(&1.hash == '0x0000000000000000000000000000000000000000'))
 
-    Logger.info("Deleting new address: #{inspect(new_ordered_changes_list.length)}")
+    #Logger.info("Deleting new address: #{inspect(new_ordered_changes_list.length)}")
 
     Import.insert_changes_list(
       repo,
-      new_ordered_changes_list,
+      ordered_changes_list,
       conflict_target: :hash,
       on_conflict: on_conflict,
       for: Transaction,
