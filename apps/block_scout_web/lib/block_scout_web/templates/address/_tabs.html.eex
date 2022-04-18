@@ -51,7 +51,7 @@
       to: AccessHelpers.get_path(@conn, :address_validation_path, :index, @address.hash)
     ) %>
   <% end %>
-  <%# <%= if contract?(@address) do %> %>
+  <%= if contract?(@address) do %>
   <%= link(
       to: AccessHelpers.get_path(@conn, :address_contract_path, :index, @address.hash),
       class: "card-tab #{tab_status("contracts", @conn.request_path)}") do %>
@@ -67,7 +67,7 @@
       <% end %>
     <% end %>
   <% end %>
-  <%# <% end %> %>
+  <% end %>
   <%= if has_decompiled_code?(@address) do %>
     <%= link(
         to: AccessHelpers.get_path(@conn, :address_decompiled_contract_path, :index, @address.hash),
