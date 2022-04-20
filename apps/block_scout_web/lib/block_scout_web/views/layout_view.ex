@@ -10,12 +10,12 @@ defmodule BlockScoutWeb.LayoutView do
   @issue_url "https://github.com/blockscout/blockscout/issues/new"
   @default_other_networks [
     %{
-      title: "DogeChain Mainnet",
+      title: "Dogechain Mainnet",
       url: "https://explorer.dogechain.community",
       test_net?: false
     },
     %{
-      title: "DogeChain Teddy",
+      title: "Dogechain Teddy",
       url: "https://explorer-teddy.dogechain.community",
       test_net?: true
     }
