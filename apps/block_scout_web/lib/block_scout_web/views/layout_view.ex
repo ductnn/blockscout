@@ -11,12 +11,12 @@ defmodule BlockScoutWeb.LayoutView do
   @default_other_networks [
     %{
       title: "Dogechain Mainnet",
-      url: "https://explorer.dogechain.community",
+      url: "https://explorer.dogechain.dog",
       test_net?: false
     },
     %{
       title: "Dogechain Teddy",
-      url: "https://explorer-teddy.dogechain.community",
+      url: "https://explorer-teddy.dogechain.dog",
       test_net?: true
     }
   ]
