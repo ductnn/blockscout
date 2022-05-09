@@ -15,8 +15,8 @@ defmodule BlockScoutWeb.LayoutView do
       test_net?: false
     },
     %{
-      title: "Dogechain Teddy",
-      url: "https://explorer-teddy.dogechain.dog",
+      title: "Dogechain Testnet",
+      url: "https://explorer-testnet.dogechain.dog",
       test_net?: true
     }
   ]
