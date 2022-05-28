@@ -9,11 +9,11 @@ defmodule BlockScoutWeb.LayoutView do
 
   @issue_url "https://github.com/blockscout/blockscout/issues/new"
   @default_other_networks [
-    %{
-      title: "Dogechain Mainnet",
-      url: "https://explorer.dogechain.dog",
-      test_net?: false
-    },
+    # %{
+    #   title: "Dogechain Mainnet",
+    #   url: "https://explorer.dogechain.dog",
+    #   test_net?: false
+    # },
     %{
       title: "Dogechain Testnet",
       url: "https://explorer-testnet.dogechain.dog",
