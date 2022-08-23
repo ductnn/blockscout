@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:13.6
+    restart: always
+    container_name: 'postgres'
+    environment:
+        POSTGRES_PASSWORD: '123DuMa123'
+        POSTGRES_USER: 'postgres'
+        POSTGRES_HOST_AUTH_METHOD: 'trust'
+    ports:
+      - 8431:5432

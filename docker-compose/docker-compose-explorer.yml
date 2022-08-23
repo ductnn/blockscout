@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+
+  blockscout:
+    build:
+      context: ..
+      dockerfile: ./docker/testnet.dockerfile
+    restart: always
+    container_name: 'blockscout'
+    command: 'mix do ecto.create, ecto.migrate, phx.server'
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
+    volumes:
+      - /data/mainnet/node:/data
+    env_file:
+      -  ./envs/common-blockscout-testnet.env
+    ports:
+      - 4000:4000
