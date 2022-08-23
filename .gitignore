@@ -47,3 +47,4 @@ screenshots/
 
 /docker-compose/postgres-data
 /docker-compose/tmp
+.vscode
